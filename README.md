@@ -29,34 +29,39 @@ The system classifies X-ray images as **Normal** or **Fractured**, provides **Gr
 ---
 
 ## 🧱 Project Architecture
+<code>
 BoneFractureDetection/
+│
 ├── app/
-│ ├── app_streamlit.py # Streamlit UI (PyTorch inference + Grad-CAM)
-│ ├── app_onnx.py # Streamlit UI (ONNX quantized inference)
-│ └── assets/ # CSS, icons, demo images
+│   ├── app_streamlit.py          # Streamlit UI (PyTorch inference + Grad-CAM)
+│   ├── app_onnx.py               # Streamlit UI (ONNX quantized inference)
+│   └── assets/                   # CSS, icons, demo images
 │
 ├── scripts/
-│ ├── data_loader.py # Preprocessing, label mapping, class weighting
-│ ├── train_teacher.py # Swin Super (Teacher) training
-│ ├── train_distill.py # Knowledge distillation (Student ← Teacher)
-│ ├── prune_and_finetune.py # Pruning redundant weights
-│ ├── quantize_and_export.py # ONNX export + INT8 quantization
-│ ├── bbox_wrapper.py # Bounding-box localization
-│ └── cam_utils.py # Grad-CAM visualization utilities
+│   ├── data_loader.py            # Preprocessing, label mapping, class weighting
+│   ├── train_teacher.py          # Swin Super (Teacher) training
+│   ├── train_distill.py          # Knowledge distillation (Student ← Teacher)
+│   ├── prune_and_finetune.py     # Pruning redundant weights
+│   ├── quantize_and_export.py    # ONNX export + INT8 quantization
+│   ├── bbox_wrapper.py           # Bounding-box localization
+│   └── cam_utils.py              # Grad-CAM visualization utilities
 │
-├── models/ # .pth / .onnx (models tracked via Git LFS / DVC)
-├── data/ # Placeholder for MURA dataset (ignored in Git)
+├── models/                       # .pth / .onnx (tracked via Git LFS / DVC)
+│
+├── data/                         # Placeholder for MURA dataset (ignored in Git)
+│
 ├── docs/
-│ ├── report.pdf # Final project report
-│ └── figures/ # Architecture + Grad-CAM visuals
+│   ├── report.pdf                # Final project report
+│   └── figures/                  # Architecture + Grad-CAM visuals
 │
-├── requirements.txt
-├── README.md
-├── CONTRIBUTING.md
-├── CODE_OF_CONDUCT.md
-├── LICENSE
-└── .gitignore
+├── requirements.txt              # Python dependencies
+├── README.md                     # Project documentation
+├── CONTRIBUTING.md               # Contribution guidelines
+├── CODE_OF_CONDUCT.md            # Contributor behavior policy
+├── LICENSE                       # Open-source license (MIT)
+└── .gitignore                    # Ignored files and directories
 
+</code>
 
 ---
 
